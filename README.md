@@ -270,5 +270,5 @@ kubectl get nodes
 NAME               STATUS   ROLES    AGE    VERSION
 srv-k8s-master01   Ready    master   13m    v1.14.3
 srv-k8s-worker01   Ready    <none>   107s   v1.14.3
-srv-k8s-worker01   Ready    <none>   91s    v1.14.3
+srv-k8s-worker02   Ready    <none>   91s    v1.14.3
 ```
