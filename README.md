@@ -1,5 +1,7 @@
 # K8S Infrastructure
 
+![banner](assets/k8s-infrastructure-banner.png)
+
 ## Installation and configuration
 
 ### Environment
