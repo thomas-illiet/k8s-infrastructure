@@ -24,7 +24,7 @@ kubectl get pods -n cert-manager
 Creating a new secret file
 
 ```
-\cp -f 04-secret.yaml.template 04-secret.yaml
+\cp -f 04-secret.yaml.exemple 04-secret.yaml
 read -a CloudflareApi -p 'Cloudflare API: ' 
 sed -i 's/<CLOUDFLARE API>/'$CloudflareApi'/g' 04-secret.yaml
 ```
