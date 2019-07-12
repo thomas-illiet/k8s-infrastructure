@@ -31,6 +31,13 @@ yum makecache
 yum update
 ```
 
+Install utils
+
+```
+yum install epel-release -y
+yum install htop nano wget nfs-utils -y
+```
+
 Close firewall on all nodes
 
 ```
@@ -113,7 +120,32 @@ Install and lanuch Docker on each nodes
 yum install docker-ce docker-ce-cli containerd.io
 
 systemctl start docker
+systemctl stop docker
 systemctl enable docker
+```
+
+Set docker configuration to use overlay2 Docker storage driver
+
+```
+cat <<EOF > /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2",
+  "storage-opts": [
+    "overlay2.override_kernel_check=true"
+  ]
+}
+EOF
+```
+
+Start docker
+
+```
+systemctl start docker
 ```
 
 ### Setup Kubernetes
