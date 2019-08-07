@@ -38,6 +38,14 @@ yum install epel-release -y
 yum install htop nano wget nfs-utils -y
 ```
 
+Set Up Time Synchronization
+
+```
+yum install ntp ntpdate
+systemctl enable ntpd
+timedatectl set-timezone Europe/Paris
+```
+
 Close firewall on all nodes
 
 ```
@@ -46,6 +54,7 @@ systemctl disable firewalld
 ```
 
 Disable SELINUX on all nodes
+
 ```
 setenforce 0
 
